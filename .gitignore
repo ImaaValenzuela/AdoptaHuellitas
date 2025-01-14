@@ -41,7 +41,7 @@ Thumbs.db
 # Claves y configuraciones sensibles
 *.keystore
 *.jks
-/google-services.json
+/app/google-services.json
 *.env
 
 # Configuración de empaquetado
