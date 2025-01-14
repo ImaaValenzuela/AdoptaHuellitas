@@ -1,0 +1,50 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Directorios de compilación
+/build/
+/app/build/
+
+# Archivos generados de Android Studio
+/.idea/
+/.gradle/
+
+# Archivos de caché
+/captures/
+/output.json
+
+# Archivos de configuración del sistema operativo
+Thumbs.db
+
+# Archivos específicos de IntelliJ/Android Studio
+*.hprof
+*.log
+*.orig
+
+# Archivos relacionados con pruebas y cobertura
+/test-results/
+/jacoco/
+
+# Claves y configuraciones sensibles
+*.keystore
+*.jks
+/google-services.json
+*.env
+
+# Configuración de empaquetado
+*.apk
+*.aab
+*.dex
