@@ -63,6 +63,12 @@ _Imágenes o gifs que muestren la interfaz de usuario y funcionalidad clave._
 
 ---
 
+## **Pruebas y Calidad** 🧪
+
+El trabajo de QA realizado en Adopta Huellitas se encuentra documentado en el archivo [`QA_TESTING.md`](./QA_TESTING.md), donde podrás consultar los detalles sobre las pruebas realizadas, los resultados obtenidos y próximos pasos para mejorar la calidad de la aplicación.
+
+---
+
 ## **Contribución** 🤝
 
 ¿Quieres contribuir a mejorar Adopta Huellitas? ¡Nos encantaría tu ayuda!
