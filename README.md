@@ -14,7 +14,7 @@ Adopta Huellitas es una plataforma que facilita la conexión entre mascotas que 
 
 ---
 
-## **Características en desarrollo** ✨
+## **Características en desarrollo** 🔜
 
 - 💌 **Notificaciones**: Recibe alertas de nuevas mascotas disponibles.
 - 🌍 **Geolocalización**: Encuentra refugios cercanos con mascotas en adopción.
@@ -59,8 +59,6 @@ Sigue los pasos a continuación para ejecutar el proyecto en tu máquina local:
 
 ---
 
-## **Capturas de pantalla** 📸
-
 _Imágenes o gifs que muestren la interfaz de usuario y funcionalidad clave._
 
 ---
@@ -79,12 +77,6 @@ _Imágenes o gifs que muestren la interfaz de usuario y funcionalidad clave._
    git commit -m "Agregada nueva funcionalidad"
    ```
 4. Envía un pull request.
-
----
-
-## **Licencia** 📜
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
 ---
 
