@@ -43,4 +43,10 @@
     <string name="registro">Registro</string>
     <string name="ya_estas_registrado">¿Ya estas registrado?</string>
     <string name="btn_cerrar_sesion">Cerrar sesion</string>
+    <string name="tv_nombre">Nombre Completo:</string>
+    <string name="txt_nombre">-----</string>
+    <string name="tv_email">Email:</string>
+    <string name="txt_email">---</string>
+    <string name="txt_miembro">---</string>
+    <string name="tv_miembro_desde">Miembro Desde:</string>
 </resources>

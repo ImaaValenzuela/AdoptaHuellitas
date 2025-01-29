@@ -54,6 +54,8 @@ dependencies {
     implementation (libs.firebase.ui.auth)
     implementation(libs.google.firebase.crashlytics)
     implementation(libs.play.services.auth)
+    implementation(libs.circleImage)
+    implementation(libs.glide)
     implementation (libs.material.v1110alpha03)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
