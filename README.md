@@ -32,22 +32,8 @@ Adopta Huellitas es una plataforma que facilita la conexión entre mascotas que 
 
 ## **Instalación** 🚀
 
-Sigue los pasos a continuación para ejecutar el proyecto en tu máquina local:
-
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/ImaaValenzuela/AdoptaHuellitas.git
-   ```
-2. **Configura Firebase**:
-   - Ve a la consola de Firebase y crea un nuevo proyecto.
-   - Descarga el archivo `google-services.json` y colócalo en el directorio `app/` de tu proyecto.
-   - Activa los servicios de Realtime Database.
-3. **Instala las dependencias**:
-   - Asegúrate de tener Android Studio configurado.
-   - Sincroniza el proyecto con Gradle.
-4. **Ejecuta la aplicación**:
-   - Selecciona un dispositivo emulado o físico.
-   - Haz clic en **Run**.
+Para probar nuestra aplicacion, ingresa a nuestra web y descargala desde un dispositivo android.
+[`AdoptaHuellitas.com`](https://adoptahuellitas.netlify.app/)
 
 ---
 
