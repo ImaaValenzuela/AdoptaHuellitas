@@ -1,3 +1,46 @@
 <resources>
-    <string name="app_name">C23-32 NOCOUNTRY</string>
+    <string name="app_name">Adopta Huellitas</string>
+    <string name="default_web_client_id">779583428799-c79ipfpekm6lvksr07c2pm9pckkqtibq.apps.googleusercontent.com</string>
+
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_huellitas">Huellitas</string>
+    <string name="menu_solicitudes">Solicitudes</string>
+
+    <string name="nombre">Nombre</string>
+    <string name="especie">Especie</string>
+    <string name="descripci_n_de_la_mascota">Descripción de la mascota</string>
+    <string name="adoptar">Adoptar</string>
+    <string name="imagen_mascota">imagen_mascota</string>
+
+    <string name="btn_register">Registrarse</string>
+    <string name="et_R_password">Repetir Contraseña</string>
+    <string name="et_password">Ingrese Contraseña</string>
+    <string name="et_email">Ingrese Email</string>
+
+    <string name="et_name">Ingrese Nombre Completo</string>
+    <string name="txt_login">Iniciar Sesion</string>
+    <string name="tv_recovery_account">Recuperar Cuenta</string>
+    <string name="btn_enter">Ingresar</string>
+    <string name="txt_dont_account">No Tienes Una Cuenta?</string>
+    <string name="txt_recoverypass">Olvidaste la contraseña?</string>
+    <string name="tv_register">Registrarse</string>
+
+    <string name="nombre_de_la_mascota">Nombre de la Mascota</string>
+    <string name="estado_pendiente">Estado: Pendiente</string>
+    <string name="fecha_01_01_2024">Fecha: 01/01/2024</string>
+
+    <string name="txt_title">Adopta Huellitas</string>
+
+
+    <string name="icon">icon</string>
+    <string name="titulo">Titulo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="continuar_con_email">Continuar con email</string>
+    <string name="continuar_con_google">Continuar con google</string>
+    <string name="has_olvidado_la_contrase_a">¿Has olvidado la contraseña?</string>
+    <string name="no_tienes_una_cuenta">¿No tienes una cuenta?</string>
+    <string name="registro">Registro</string>
+    <string name="ya_estas_registrado">¿Ya estas registrado?</string>
+    <string name="btn_cerrar_sesion">Cerrar sesion</string>
 </resources>

@@ -1,4 +1,9 @@
 package com.c2332.adoptahuellitas.viewmodels
 
-class SolicitudesViewModel {
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.c2332.adoptahuellitas.models.Solicitud
+
+class SolicitudesViewModel : ViewModel() {
+
 }

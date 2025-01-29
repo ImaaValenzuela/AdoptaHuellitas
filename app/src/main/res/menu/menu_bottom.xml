@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_perfil"
+        android:title="@string/menu_perfil"
+        android:icon="@drawable/ic_perfil"
+        />
+
+    <item
+        android:id="@+id/item_huellitas"
+        android:title="@string/menu_huellitas"
+        android:icon="@drawable/ic_huellitas"
+        />
+
+    <item
+        android:id="@+id/item_solicitudes"
+        android:title="@string/menu_solicitudes"
+        android:icon="@drawable/ic_solicitudes"
+        />
+</menu>
