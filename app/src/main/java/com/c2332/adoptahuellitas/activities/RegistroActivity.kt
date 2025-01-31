@@ -109,12 +109,12 @@ class RegistroActivity : AppCompatActivity() {
 
         val dataUser = mapOf(
             "uid" to uidU,
-            "names" to namesU,
+            "nombres" to namesU,
             "email" to emailU,
-            "time" to timeR,
-            "prov" to "email",
-            "status" to "online",
-            "image" to ""
+            "tiempoR" to timeR,
+            "proveedor" to "email",
+            "estado" to "online",
+            "imagen" to ""
         )
 
         val reference = FirebaseDatabase.getInstance().getReference("Usuarios")

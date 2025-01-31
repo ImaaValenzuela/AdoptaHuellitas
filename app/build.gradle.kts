@@ -56,6 +56,8 @@ dependencies {
     implementation(libs.play.services.auth)
     implementation(libs.circleImage)
     implementation(libs.glide)
+    implementation (libs.kotlin.url.gen)
+    implementation(libs.okhttp)
     implementation (libs.material.v1110alpha03)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
