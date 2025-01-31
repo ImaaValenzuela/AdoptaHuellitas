@@ -57,6 +57,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/tv_recuperar"
+        android:text="@string/has_olvidado_la_contrase_a"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progressIndicator"
         android:layout_width="48dp"
@@ -71,8 +80,7 @@
         android:id="@+id/btn_enter"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="25dp"
         app:cornerRadius="10dp"
         android:text="@string/btn_enter"
         android:backgroundTint="@color/principal"
@@ -80,23 +88,8 @@
         android:textStyle="bold" />
 
     <TextView
-        android:text="@string/has_olvidado_la_contrase_a"
-        android:layout_marginTop="20dp"
-        android:textSize="15sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    
-    <TextView
-        android:id="@+id/tv_recovery_account"
-        android:text="@string/tv_recovery_account"
-        android:textStyle="bold"
-        android:textAllCaps="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
         android:text="@string/no_tienes_una_cuenta"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textSize="15sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

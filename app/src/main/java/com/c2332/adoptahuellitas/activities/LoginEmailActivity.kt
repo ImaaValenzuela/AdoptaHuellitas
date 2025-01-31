@@ -34,6 +34,10 @@ class LoginEmailActivity : AppCompatActivity() {
         binding.tvRegister.setOnClickListener {
             startActivity(Intent(applicationContext, RegistroActivity::class.java))
         }
+
+        binding.tvRecuperar.setOnClickListener {
+            startActivity(Intent(applicationContext, OlvideContrasenia::class.java))
+        }
     }
 
     private fun validarInformacion() {
