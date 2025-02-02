@@ -1,5 +1,6 @@
 package com.c2332.adoptahuellitas.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.c2332.adoptahuellitas.R
 import com.c2332.adoptahuellitas.models.Mascota
 import com.c2332.adoptahuellitas.viewmodels.MascotasViewModel
+import com.google.android.material.button.MaterialButton
 
 class MascotaDetalleActivity : AppCompatActivity() {
     private val viewModel: MascotasViewModel by viewModels()
@@ -27,6 +29,7 @@ class MascotaDetalleActivity : AppCompatActivity() {
         val mascotaEstadoSalud: TextView = findViewById(R.id.mascota_estado_salud)
         val mascotaPersonalidad: TextView = findViewById(R.id.mascota_personalidad)
         val mascotaRequisitos: TextView = findViewById(R.id.mascota_requisitos)
+        val btnAplicar: MaterialButton = findViewById(R.id.btn_aplicar)
 
         val mascota = intent.getSerializableExtra("mascota") as? Mascota
         mascota?.let { viewModel.setMascota(it) }
@@ -43,6 +46,12 @@ class MascotaDetalleActivity : AppCompatActivity() {
             mascotaRequisitos.text = "Requisitos: ${mascota.requisitos}"
 
             Glide.with(this).load(mascota.fotoUrl).into(mascotaFoto)
+
+            btnAplicar.setOnClickListener {
+                val intent = Intent(this, FormularioAdopcion::class.java)
+                intent.putExtra("idMascota", mascota.id)
+                startActivity(intent)
+            }
         }
     }
 }
