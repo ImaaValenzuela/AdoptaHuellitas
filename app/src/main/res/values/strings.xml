@@ -54,4 +54,6 @@
     <string name="Txt_ingrese_email">Ingrese su email para recibir las instrucciones</string>
     <string name="et_Email">Email</string>
     <string name="btn_Enviar">Enviar</string>
+    <string name="mascota_foto">foto de la mascota</string>
+    <string name="btn_aplicar">Aplicar</string>
 </resources>

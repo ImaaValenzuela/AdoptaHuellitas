@@ -1,6 +1,7 @@
 package com.c2332.adoptahuellitas.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.c2332.adoptahuellitas.R
+import com.c2332.adoptahuellitas.activities.MascotaDetalleActivity
 import com.c2332.adoptahuellitas.adapters.MascotaAdapter
 import com.c2332.adoptahuellitas.databinding.FragmentHuellitasBinding
 import com.c2332.adoptahuellitas.models.Mascota
@@ -41,7 +43,13 @@ class FragmentHuellitas : Fragment() {
 
     private fun listaMascotas() {
         listMascota = MascotaRepository().getMascotas()
-        mascotaAdapter = MascotaAdapter(mContext, listMascota)
+
+        mascotaAdapter = MascotaAdapter(mContext, listMascota) { mascota ->
+            val intent = Intent(mContext, MascotaDetalleActivity::class.java)
+            intent.putExtra("mascota", mascota)
+            startActivity(intent)
+        }
+
         binding.RVmascotas.adapter = mascotaAdapter
     }
 }

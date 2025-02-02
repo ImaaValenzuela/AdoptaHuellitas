@@ -13,7 +13,8 @@ import com.c2332.adoptahuellitas.models.Mascota
 
 class MascotaAdapter(
     private val context: Context,
-    private val mascotas: List<Mascota>
+    private val mascotas: List<Mascota>,
+    private val onItemClick: (Mascota) -> Unit
 ) : RecyclerView.Adapter<MascotaAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -47,6 +48,10 @@ class MascotaAdapter(
             .load(mascota.fotoUrl)
             .placeholder(R.drawable.ic_mascota_placeholder)
             .into(holder.imageMascota)
+
+        holder.itemView.setOnClickListener {
+            onItemClick(mascota)
+        }
     }
 
     override fun getItemCount(): Int = mascotas.size

@@ -1,5 +1,7 @@
 package com.c2332.adoptahuellitas.models
 
+import java.io.Serializable
+
 data class Mascota(
     var id: String = "",
     var nombre: String = "",
@@ -12,4 +14,4 @@ data class Mascota(
     var personalidad: String = "",
     var requisitos: String = "",
     var fotoUrl: String = ""
-)
+) : Serializable
