@@ -191,4 +191,8 @@ class MascotaRepository {
     fun getMascotas(): List<Mascota> {
         return mascotas
     }
+
+    fun obtenerNombreMascotaPorId(idMascota: String): String? {
+        return mascotas.find { it.id == idMascota }?.nombre
+    }
 }

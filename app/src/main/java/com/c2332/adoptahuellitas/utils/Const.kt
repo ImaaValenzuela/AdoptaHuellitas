@@ -13,4 +13,11 @@ object Const {
         return System.currentTimeMillis()
     }
 
+    fun formatoFecha(time : Long) : String{
+        val calendar = Calendar.getInstance(Locale.ENGLISH)
+        calendar.timeInMillis = time
+
+        return DateFormat.format("dd/MM/yyyy", calendar).toString()
+    }
+
 }

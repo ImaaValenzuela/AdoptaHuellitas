@@ -8,8 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.c2332.adoptahuellitas.MainActivity
 import com.c2332.adoptahuellitas.R
-import com.c2332.adoptahuellitas.fragments.FragmentHuellitas
 import com.c2332.adoptahuellitas.models.Formulario
+import com.c2332.adoptahuellitas.models.Solicitud
 import com.c2332.adoptahuellitas.utils.Const
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -80,9 +80,13 @@ class FormularioAdopcion : AppCompatActivity() {
         val entiendeCompromiso = checkCompromiso.isChecked
         val firma = firmaDigital.text.toString()
 
+        val idFormulario = database.push().key ?: ""
+        val idUsuario = firebaseAuth.currentUser?.uid ?: ""
+        val marcaDeTiempo = Const.obtenerTiempoD()
+
         val formulario = Formulario(
-            idFormulario = database.push().key ?: "",
-            idUsuario = firebaseAuth.currentUser?.uid ?: "",
+            idFormulario = idFormulario,
+            idUsuario = idUsuario,
             idMascota = idMascota ?: "",
             tipoCasa = tipoCasa,
             tieneJardin = tieneJardin,
@@ -95,19 +99,41 @@ class FormularioAdopcion : AppCompatActivity() {
             aceptaSeguimiento = aceptaSeguimiento,
             entiendeCompromiso = entiendeCompromiso,
             firma = firma,
-            marcaDeTiempo = Const.obtenerTiempoD()
+            marcaDeTiempo = marcaDeTiempo
         )
 
-        database.child("Formularios").child(formulario.idFormulario).setValue(formulario)
+        database.child("Formularios").child(idFormulario).setValue(formulario)
             .addOnSuccessListener {
-                progressDialog.hide()  // Hide the progress dialog
-                Toast.makeText(this, "Formulario enviado exitosamente", Toast.LENGTH_SHORT).show()
+                // Crear solicitud después de guardar el formulario
+                crearSolicitud(idUsuario, idMascota ?: "", idFormulario)
+            }
+            .addOnFailureListener { e ->
+                progressDialog.hide()
+                Toast.makeText(this, "Error al enviar el formulario: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun crearSolicitud(idUsuario: String, idMascota: String, idFormulario: String) {
+        val idSolicitud = database.push().key ?: ""
+        val solicitud = Solicitud(
+            id = idSolicitud,
+            idUsuario = idUsuario,
+            idMascota = idMascota,
+            idFormulario = idFormulario,
+            estado = "Pendiente",
+            fecha = Const.obtenerTiempoD()
+        )
+
+        database.child("Solicitudes").child(idSolicitud).setValue(solicitud)
+            .addOnSuccessListener {
+                progressDialog.hide()
+                Toast.makeText(this, "Solicitud enviada exitosamente", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(applicationContext, MainActivity::class.java))
                 finish()
             }
             .addOnFailureListener { e ->
-                progressDialog.hide()  // Hide the progress dialog
-                Toast.makeText(this, "Error al enviar el formulario: ${e.message}", Toast.LENGTH_SHORT).show()
+                progressDialog.hide()
+                Toast.makeText(this, "Error al enviar la solicitud: ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
 }
