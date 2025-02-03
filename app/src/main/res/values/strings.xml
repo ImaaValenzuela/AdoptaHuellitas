@@ -56,4 +56,21 @@
     <string name="btn_Enviar">Enviar</string>
     <string name="mascota_foto">foto de la mascota</string>
     <string name="btn_aplicar">Aplicar</string>
+    <string name="informaci_n_personal_del_adoptante">Información Personal del Adoptante</string>
+    <string name="acepto_que_tengo_mi_perfil_actualizado_con_mis_datos_correctos">Acepto que tengo mi perfil actualizado con mis datos correctos.</string>
+    <string name="informaci_n_sobre_el_hogar">Información sobre el Hogar</string>
+    <string name="tipo_de_vivienda_casa_departamento_etc">¿Tipo de vivienda? (Casa, departamento, etc.)</string>
+    <string name="tienes_patio_o_jard_n_s_no">¿Tienes patio o jardín? (Sí/No)</string>
+    <string name="otros_animales_en_casa_s_no">¿Otros animales en casa? (Sí/No)</string>
+    <string name="viven_ni_os_en_el_hogar_s_no">¿Viven niños en el hogar? (Sí/No)</string>
+    <string name="estilo_de_vida_y_responsabilidad">Estilo de Vida y Responsabilidad</string>
+    <string name="pasas_en_casa_diariamente_s_no">¿Pasas en casa diariamente? (Sí/No)</string>
+    <string name="has_tenido_mascotas_antes_s_no">¿Has tenido mascotas antes? (Sí/No)</string>
+    <string name="declaraci_n_y_compromiso">Declaración y Compromiso</string>
+    <string name="acepto_ser_responsable_del_bienestar_de_la_mascota">Acepto ser responsable del bienestar de la mascota.</string>
+    <string name="acepto_que_un_refugio_realice_seguimiento_post_adopci_n">Acepto que un refugio realice seguimiento post-adopción.</string>
+    <string name="entiendo_que_esta_adopci_n_es_un_compromiso_de_por_vida">Entiendo que esta adopción es un compromiso de por vida.</string>
+    <string name="firma_digital_o_nombre_completo">Firma digital o nombre completo</string>
+    <string name="enviar_solicitud">Enviar Solicitud</string>
+    <string name="btn_beneficios">Beneficios</string>
 </resources>

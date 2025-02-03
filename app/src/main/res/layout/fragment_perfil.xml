@@ -82,6 +82,20 @@
             android:layout_gravity="center"
             android:layout_width="250dp"
             android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_beneficios"
+            android:text="@string/btn_beneficios"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            android:layout_below="@id/btn_cerrar_sesion"
+            android:layout_marginTop="8dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/principal"
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"/>
         
     </RelativeLayout>
 

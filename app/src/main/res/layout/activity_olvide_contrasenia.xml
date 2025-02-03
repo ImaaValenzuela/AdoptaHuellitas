@@ -82,6 +82,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_Enviar"
             android:text="@string/btn_Enviar"
+            android:backgroundTint="@color/principal"
             app:cornerRadius="8dp"
             android:layout_alignParentBottom="true"
             android:textAllCaps="true"

@@ -8,14 +8,16 @@
     android:padding="10dp"
     tools:context=".activities.FormularioAdopcion">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
         <!-- Información Personal -->
         <TextView
-            android:text="Información Personal del Adoptante"
+            android:text="@string/informaci_n_personal_del_adoptante"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
@@ -23,13 +25,14 @@
 
         <CheckBox
             android:id="@+id/check_actualizado"
-            android:text="Acepto que tengo mi perfil actualizado con mis datos correctos."
+            android:text="@string/acepto_que_tengo_mi_perfil_actualizado_con_mis_datos_correctos"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
 
         <!-- Información sobre el Hogar -->
         <TextView
-            android:text="Información sobre el Hogar"
+            android:text="@string/informaci_n_sobre_el_hogar"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
@@ -37,78 +40,83 @@
 
         <EditText
             android:id="@+id/tipo_vivienda"
-            android:hint="¿Tipo de vivienda? (Casa, departamento, etc.)"
+            android:hint="@string/tipo_de_vivienda_casa_departamento_etc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/patio_jardin"
-            android:hint="¿Tienes patio o jardín? (Sí/No)"
+            android:hint="@string/tienes_patio_o_jard_n_s_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/otros_animales"
-            android:hint="¿Otros animales en casa? (Sí/No)"
+            android:hint="@string/otros_animales_en_casa_s_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/ninos_hogar"
-            android:hint="¿Viven niños en el hogar? (Sí/No)"
+            android:hint="@string/viven_ni_os_en_el_hogar_s_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <!-- Estilo de Vida -->
         <TextView
-            android:text="Estilo de Vida y Responsabilidad"
+            android:text="@string/estilo_de_vida_y_responsabilidad"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/tiempo_en_casa"
-            android:hint="¿Pasas en casa diariamente? (Sí/No)"
+            android:hint="@string/pasas_en_casa_diariamente_s_no"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/mascotas_anteriores"
-            android:hint="¿Has tenido mascotas antes? (Sí/No)"
+            android:hint="@string/has_tenido_mascotas_antes_s_no"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
 
         <!-- Declaración y Compromiso -->
         <TextView
-            android:text="Declaración y Compromiso"
+            android:text="@string/declaraci_n_y_compromiso"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/check_responsabilidad"
-            android:text="✅ Acepto ser responsable del bienestar de la mascota."
+            android:text="@string/acepto_ser_responsable_del_bienestar_de_la_mascota"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/check_seguimiento"
-            android:text="✅ Acepto que un refugio realice seguimiento post-adopción."
+            android:text="@string/acepto_que_un_refugio_realice_seguimiento_post_adopci_n"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <CheckBox
             android:id="@+id/check_compromiso"
-            android:text="✅ Entiendo que esta adopción es un compromiso de por vida."
+            android:text="@string/entiendo_que_esta_adopci_n_es_un_compromiso_de_por_vida"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <!-- Firma -->
         <EditText
             android:id="@+id/firma_digital"
-            android:hint="Firma digital o nombre completo"
+            android:hint="@string/firma_digital_o_nombre_completo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -124,7 +132,8 @@
         <!-- Botón Enviar -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_enviar_formulario"
-            android:text="Enviar Solicitud"
+            android:text="@string/enviar_solicitud"
+            android:backgroundTint="@color/principal"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
