@@ -59,6 +59,7 @@ dependencies {
     implementation (libs.kotlin.url.gen)
     implementation(libs.okhttp)
     implementation (libs.material.v1110alpha03)
+    implementation(libs.firebase.storage.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

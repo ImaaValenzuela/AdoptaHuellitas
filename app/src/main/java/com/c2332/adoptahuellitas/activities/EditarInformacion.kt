@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import org.json.JSONObject
@@ -51,12 +52,11 @@ class EditarInformacion : AppCompatActivity() {
         }
 
         binding.IvEditarImg.setOnClickListener {
-            Toast.makeText(this, "Proximamente", Toast.LENGTH_SHORT).show()
-            /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
                 abrirGaleria()
             }else{
                 solicitarPermisoAlmacenamiento.launch(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            }*/
+            }
         }
 
         binding.btnActualizar.setOnClickListener {
@@ -71,85 +71,32 @@ class EditarInformacion : AppCompatActivity() {
     }
 
     private val galeriaARL =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { resultado ->
-            if (resultado.resultCode == Activity.RESULT_OK && resultado.data?.data != null) {
-                imagenUri = resultado.data?.data
-                binding.ivPerfil.setImageURI(imagenUri)
-                subirImagenACloudinary(imagenUri)
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { res ->
+            if (res.resultCode == Activity.RESULT_OK) {
+                val data = res.data
+                imagenUri = data?.data
+                subirImagenStorage(imagenUri)
             } else {
-                Toast.makeText(this, "Selección cancelada", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()
             }
         }
 
-
-    private fun subirImagenACloudinary(imagenUri: Uri?) {
-        if (imagenUri == null) {
-            Toast.makeText(this, "Error: No se seleccionó ninguna imagen", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        progressDialog.setMessage("Subiendo imagen...")
+    private fun subirImagenStorage(imagenUri: Uri?) {
         progressDialog.show()
 
-        val cloudName = "dureczpek"
-        val requestBodyBuilder = MultipartBody.Builder()
-            .setType(MultipartBody.FORM)
-            .addFormDataPart("upload_preset", "ml_default")
-
-        try {
-            val inputStream = contentResolver.openInputStream(imagenUri)
-            val bytes = inputStream?.readBytes()
-            inputStream?.close()
-
-            if (bytes != null) {
-                requestBodyBuilder.addFormDataPart(
-                    "file", "imagen.jpg",
-                    RequestBody.create("image/*".toMediaTypeOrNull(), bytes)
-                )
-            } else {
-                throw IOException("No se pudo leer la imagen")
-            }
-
-        } catch (e: IOException) {
-            progressDialog.dismiss()
-            Toast.makeText(this, "Error al leer la imagen: ${e.message}", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val requestBody = requestBodyBuilder.build()
-        val request = Request.Builder()
-            .url("https://api.cloudinary.com/v1_1/$cloudName/image/upload")
-            .post(requestBody)
-            .build()
-
-        val client = OkHttpClient()
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                runOnUiThread {
-                    progressDialog.dismiss()
-                    Toast.makeText(applicationContext, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+        val routeImage = "ImagenPerfil/" + firebaseAuth.uid
+        val ref = FirebaseStorage.getInstance().getReference(routeImage)
+        ref.putFile(imagenUri!!)
+            .addOnSuccessListener { taskSnapshot ->
+                taskSnapshot.storage.downloadUrl.addOnSuccessListener { uri ->
+                    val urlImageUpload = uri.toString()
+                    actualizarInfoBD(urlImageUpload)
                 }
             }
-
-            override fun onResponse(call: Call, response: Response) {
-                response.body?.string()?.let {
-                    val jsonResponse = JSONObject(it)
-                    val imageUrl = jsonResponse.optString("secure_url", "")
-
-                    if (imageUrl.isNotEmpty()) {
-                        runOnUiThread {
-                            progressDialog.dismiss()
-                            actualizarInfoBD(imageUrl)  // Guarda la URL en Firebase
-                        }
-                    } else {
-                        runOnUiThread {
-                            progressDialog.dismiss()
-                            Toast.makeText(applicationContext, "No se obtuvo URL de la imagen", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(this, "Error al subir imagen: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-        })
     }
 
 
